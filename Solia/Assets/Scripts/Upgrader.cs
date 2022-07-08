@@ -14,13 +14,12 @@ public class Upgrader : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-        //subscribe to the upgrade action
+
     }
 
     // Update is called once per frame
     private void Update()
     {
-        //check if upgrade key is pressed
 
     }
 
