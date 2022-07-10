@@ -1,16 +1,8 @@
+using System;
 using UnityEngine;
 
-public class Item : MonoBehaviour
+[Serializable]
+public class Item
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    public Sprite itemSprite;
 }
