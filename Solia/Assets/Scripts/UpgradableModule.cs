@@ -37,7 +37,7 @@ public class UpgradableModule : MonoBehaviour
         Debug.Log("Upgrade succesful !");
 
         //SECOND, destroy myself if not reusable
-        if(!IsReusable)
+        if (!IsReusable)
         {
             Destroy(gameObject);
         }
