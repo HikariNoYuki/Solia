@@ -243,4 +243,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 1628168351}
   characterMoveSpeed: 7
-  accelerationPercent: 0.02
+  accelerationPercent: 0.17
