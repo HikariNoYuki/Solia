@@ -7,8 +7,13 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
 
+    public class Slot
+    {
+        public Item SlotItem;
+        public int Number;
+    }
     [Tooltip("The list of items in this inventory")]
-    public List<Tuple<Item,int>> inventory;
+    public List<Slot> inventory;
 
     // Start is called before the first frame update
     private void Start()
@@ -24,37 +29,37 @@ public class Inventory : MonoBehaviour
 
     public void addItem(Item i)
     {
-        foreach (var iTuples in inventory)
+        foreach (var iSlots in inventory)
         {
-            if ((i.name == iTuples.Item1.name) && iTuples.Item2 < 99 )
+            if ((i.itemName == iSlots.SlotItem.itemName) && iSlots.Number < 99 )
             {
-                iTuples.Item2 += 1;
+                iSlots.Number += 1;
             }
             else
             {
-                iTuples.Item1 = i;
-                iTuples.Item2 = 1;
+                iSlots.SlotItem = i;
+                iSlots.Number = 1;
             }
         }
     }
     
-    public void supprItem(Item)
+    public void supprItem(Item i)
     {
-        foreach (var iTuples in inventory)
+        foreach (var iSlots in inventory)
         {
-            if ((Item.name == iTuples.Item1.name) && iTuples.Item2 > 0)
+            if ((i.itemName == iSlots.SlotItem.itemName) && iSlots.Number > 0)
             {
-                iTuples.Item2 -= 1;
+                iSlots.Number -= 1;
             }
         }
     }
 
-    public void moveItem(Item)
+    public void moveItem(Item i)
     {
         
     }
 
-    public void fuseItem(Item)
+    public void fuseItem(Item i)
     {
         
     }
