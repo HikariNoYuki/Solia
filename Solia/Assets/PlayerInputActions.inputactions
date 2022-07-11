@@ -2,7 +2,7 @@
     "name": "PlayerInputActions",
     "maps": [
         {
-            "name": "Player_Movement",
+            "name": "Player",
             "id": "5bdcf02a-4522-4cbf-a92c-f50fb29a925e",
             "actions": [
                 {
@@ -13,6 +13,24 @@
                     "processors": "NormalizeVector2",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "Pickup",
+                    "type": "Button",
+                    "id": "4baecb7f-2999-4af4-97ff-36608a85b839",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "Upgrade",
+                    "type": "Button",
+                    "id": "cfe4807b-5300-422c-8dec-a352b963c348",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -70,47 +88,21 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
-                }
-            ]
-        },
-        {
-            "name": "Player_Actions",
-            "id": "541d9f53-7bd4-43ea-b062-9a6307c7b4f1",
-            "actions": [
-                {
-                    "name": "PickUp",
-                    "type": "Button",
-                    "id": "26b21804-b047-419d-b8ec-210ad384585a",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
                 },
                 {
-                    "name": "Upgrade",
-                    "type": "Button",
-                    "id": "d835f2d7-b3ac-40c5-b994-93ae730a0a67",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                }
-            ],
-            "bindings": [
-                {
                     "name": "",
-                    "id": "02eeba84-174e-4f43-ba60-65ce4951ee76",
-                    "path": "",
+                    "id": "c4a2b5b0-f3af-48ba-9a5a-acb0f283356f",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "PickUp",
+                    "action": "Pickup",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
                 {
                     "name": "",
-                    "id": "03ac766f-117a-48b6-92c6-a4a9c857d645",
+                    "id": "56e81105-4bd0-4ed3-9234-bec1ef94187b",
                     "path": "<Keyboard>/k",
                     "interactions": "",
                     "processors": "",

@@ -161,8 +161,8 @@ MonoBehaviour:
     m_ActionName: Player_Movement/Move
   - m_PersistentCalls:
       m_Calls: []
-    m_ActionId: 26b21804-b047-419d-b8ec-210ad384585a
-    m_ActionName: Player_Actions/PickUp
+    m_ActionId: 4baecb7f-2999-4af4-97ff-36608a85b839
+    m_ActionName: Player_Movement/Pickup[/Keyboard/e]
   - m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 672390199805342329}
@@ -177,11 +177,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-    m_ActionId: d835f2d7-b3ac-40c5-b994-93ae730a0a67
-    m_ActionName: Player_Actions/Upgrade[/Keyboard/k]
+    m_ActionId: cfe4807b-5300-422c-8dec-a352b963c348
+    m_ActionName: Player_Movement/Upgrade[/Keyboard/k]
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: 
-  m_DefaultActionMap: Player_Movement
+  m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
 --- !u!114 &672390199805342329
@@ -210,7 +210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d92b585f400c054fb2886ff16a2ffd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventory: []
 --- !u!143 &1628168351
 CharacterController:
   m_ObjectHideFlags: 0
@@ -222,7 +221,7 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
+  m_Height: 1.04
   m_Radius: 0.5
   m_SlopeLimit: 45
   m_StepOffset: 0.3
