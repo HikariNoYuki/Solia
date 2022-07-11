@@ -12,3 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c426db76a425d35439845ad59638b62f, type: 3}
   m_Name: ItemsListData
   m_EditorClassIdentifier: 
+  items:
+    Weapons: []
+    Consumables: []
+    Armors: []
+    Resources: []
