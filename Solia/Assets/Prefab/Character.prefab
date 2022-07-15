@@ -96,6 +96,7 @@ GameObject:
   - component: {fileID: 3805086524209075346}
   - component: {fileID: 1628168351}
   - component: {fileID: 1628168350}
+  - component: {fileID: 969951162}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -160,7 +161,19 @@ MonoBehaviour:
     m_ActionId: ed9531a8-8d77-4dc1-99d5-25cbbb6e4d66
     m_ActionName: Player_Movement/Move
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 969951162}
+        m_TargetAssemblyTypeName: CanPickupItems, Assembly-CSharp
+        m_MethodName: TryPickup
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 4baecb7f-2999-4af4-97ff-36608a85b839
     m_ActionName: Player_Movement/Pickup[/Keyboard/e]
   - m_PersistentCalls:
@@ -210,6 +223,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3d92b585f400c054fb2886ff16a2ffd4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  inventory: []
 --- !u!143 &1628168351
 CharacterController:
   m_ObjectHideFlags: 0
@@ -243,3 +257,17 @@ MonoBehaviour:
   characterController: {fileID: 1628168351}
   characterMoveSpeed: 7
   accelerationPercent: 0.17
+--- !u!114 &969951162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7063046941177000131}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d45679f12d264d549ad63a08f94d2a23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pickupRange: 3.55
+  inventory: {fileID: 3805086524209075346}

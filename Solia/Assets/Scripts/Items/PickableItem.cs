@@ -37,4 +37,14 @@ public class PickableItem : MonoBehaviour
         //change the sprite of the object
         sprite.sprite = myItem.itemSprite;
     }
+
+    //try to pickup this item and put in the inventory
+    public void TryPickupItem(Inventory inventory)
+    {
+        //add the item to the inventory
+        inventory.addItem(myItem);
+
+        //destroy self
+        Destroy(gameObject);
+    }
 }
