@@ -35,12 +35,9 @@ public class Inventory : MonoBehaviour
             }
         }
 
-        Slot toAdd = new Slot
-        {
-            SlotItem = i,
-            Number = 1
-        };
-
+        Slot toAdd = new Slot();
+        toAdd.SlotItem = i;
+        toAdd.Number = 1;
         inventory.Add(toAdd);
     } 
     
