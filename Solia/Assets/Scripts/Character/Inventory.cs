@@ -41,7 +41,36 @@ public class Inventory : MonoBehaviour
                 iSlots.Number = 1;
             }
         }
-    }
+    } 
+    
+     public void addItem(Item i, int quantity)
+     {
+         foreach (var iSlots in inventory)
+         {
+             if ((i.itemName == iSlots.SlotItem.itemName) && iSlots.Number+quantity < 99 )
+             {
+                 if ((99 - iSlots.Number) <= quantity)
+                 {
+                     iSlots.Number += quantity;
+                     return;
+                 }
+                 else
+                 {
+                     quantity = quantity - (99 - iSlots.Number);
+                     iSlots.Number = 99;
+                 }
+             }
+             else
+             {
+                 Slot toAdd = new Slot();
+                 toAdd.SlotItem = i;
+                 toAdd.Number = quantity;
+                 inventory.Add(toAdd);
+             }
+         }
+
+
+     }
     
     public void supprItem(Item i)
     {
