@@ -92,6 +92,7 @@ GameObject:
   m_Component:
   - component: {fileID: 146931859822439659}
   - component: {fileID: 146931859822439656}
+  - component: {fileID: 1621499406}
   m_Layer: 0
   m_Name: UpgradableBase
   m_TagString: Untagged
@@ -127,5 +128,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradedObject: {fileID: 4359279725314546775, guid: f8358f809abf7b1459b35e7655aeacc7, type: 3}
-  NeededItems: []
   IsReusable: 0
+--- !u!58 &1621499406
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 146931859822439657}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.5
