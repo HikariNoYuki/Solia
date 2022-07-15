@@ -20,6 +20,7 @@ public class Upgrader : MonoBehaviour
     {
     }
 
+    //debug sphere to show range
     private void OnDrawGizmosSelected()
     {
         //draw the range of the upgrader
@@ -33,28 +34,10 @@ public class Upgrader : MonoBehaviour
         if(context.performed)
         {
             Debug.Log("Tried upgrading closest");
+
             //search if there is an upgradable in the range
-            UpgradableModule[] upgradables = FindObjectsOfType<UpgradableModule>();
+            UpgradableModule closest = Utils.FindNearestInRange<UpgradableModule>(transform, upgradeRange);
 
-            UpgradableModule closest = null;
-            float minDistance = Mathf.Infinity;
-            foreach(UpgradableModule upgradableModule in upgradables)
-            {
-                float curDistance = Vector2.Distance(upgradableModule.transform.position, transform.position);
-                //check if in range
-                if(!( curDistance <= upgradeRange ))
-                {
-                    continue;
-                }
-
-                //check if first in range
-                //check if closer than closest
-                if(closest == null || minDistance > curDistance)
-                {
-                    closest = upgradableModule;
-                    minDistance = curDistance;
-                }
-            }
             //closest still null means no upgradable in range
             if(closest == null)
             {
