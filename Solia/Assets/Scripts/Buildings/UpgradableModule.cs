@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using static Inventory;
 
 public class UpgradableModule : MonoBehaviour
 {
@@ -7,7 +8,7 @@ public class UpgradableModule : MonoBehaviour
     [SerializeField] private GameObject UpgradedObject;
 
     [Tooltip("The resources needed to upgrade this building")]
-    [SerializeField] private List<Item> NeededItems = new List<Item>();
+    [SerializeField] private List<Slot> NeededItems = new List<Slot>();
 
     [Tooltip("If this building is destroyed when upgraded. ")]
     [SerializeField] private bool IsReusable = true;
@@ -26,6 +27,7 @@ public class UpgradableModule : MonoBehaviour
     public void TryUpgrade(Inventory inventory)
     {
         //TODO - check the inventory equals the needed and remove them from the inventory
+        inventory.CheckAndRemove(NeededItems);
 
         //upgrade the building
         //FIRST, spawn the upgraded version on the same position
