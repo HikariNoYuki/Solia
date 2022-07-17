@@ -127,6 +127,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   itemsList: {fileID: 11400000, guid: d72206b93864eda4f942a67e955ec9aa, type: 2}
-  category: 0
-  id: 0
-  sprite: {fileID: 5606773472938286280}
+  currentItem:
+    category: 0
+    itemId: 0
+    quantity: 1
+  spriteRenderer: {fileID: 5606773472938286280}

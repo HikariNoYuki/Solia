@@ -5,14 +5,11 @@ public class PickableItem : MonoBehaviour
     [Tooltip("The items list to use")]
     [SerializeField] private ItemsList itemsList;
 
-    [Tooltip("The category of the item")]
-    [SerializeField] private ItemCategory.CategoryList category;
-
-    [Tooltip("The id of the item (element number in ItemListData)")]
-    [SerializeField] private int id;
+    [Tooltip("The item to search for")]
+    [SerializeField] private ToSearchItem currentItem;
 
     [Tooltip("The sprite renderer to use for showing the item")]
-    [SerializeField] private SpriteRenderer sprite;
+    [SerializeField] private SpriteRenderer spriteRenderer;
 
     //the item associated with this object
     private Item myItem;
@@ -32,17 +29,17 @@ public class PickableItem : MonoBehaviour
     private void LoadItem()
     {
         //search the item is the itemsList
-        myItem = itemsList.items.GetItem(id, category);
+        myItem = itemsList.items.GetItem(currentItem);
 
         //change the sprite of the object
-        sprite.sprite = myItem.itemSprite;
+        spriteRenderer.sprite = myItem.itemSprite;
     }
 
     //try to pickup this item and put in the inventory
     public void TryPickupItem(Inventory inventory)
     {
         //add the item to the inventory
-        inventory.addItem(myItem);
+        inventory.addItem(myItem, currentItem.quantity);
 
         //destroy self
         Destroy(gameObject);

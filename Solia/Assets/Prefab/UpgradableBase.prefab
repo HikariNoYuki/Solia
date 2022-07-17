@@ -128,6 +128,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   UpgradedObject: {fileID: 4359279725314546775, guid: f8358f809abf7b1459b35e7655aeacc7, type: 3}
+  list: {fileID: 11400000, guid: d72206b93864eda4f942a67e955ec9aa, type: 2}
+  NeededItems:
+  - category: 0
+    itemId: 0
+    quantity: 1
   IsReusable: 0
 --- !u!58 &1621499406
 CircleCollider2D:

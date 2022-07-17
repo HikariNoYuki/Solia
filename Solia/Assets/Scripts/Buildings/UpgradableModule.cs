@@ -1,14 +1,16 @@
 using System.Collections.Generic;
 using UnityEngine;
-using static Inventory;
 
 public class UpgradableModule : MonoBehaviour
 {
     [Tooltip("What object is spawned when this building is upgraded")]
     [SerializeField] private GameObject UpgradedObject;
 
+    [Tooltip("The item list to use")]
+    [SerializeField] private ItemsList list;
+
     [Tooltip("The resources needed to upgrade this building")]
-    [SerializeField] private List<Slot> NeededItems = new List<Slot>();
+    [SerializeField] private List<ToSearchItem> NeededItems = new List<ToSearchItem>();
 
     [Tooltip("If this building is destroyed when upgraded. ")]
     [SerializeField] private bool IsReusable = true;
@@ -26,20 +28,21 @@ public class UpgradableModule : MonoBehaviour
     //function that tries to upgrade the current building with the materials in the inventory
     public void TryUpgrade(Inventory inventory)
     {
-        //TODO - check the inventory equals the needed and remove them from the inventory
-        inventory.CheckAndRemove(NeededItems);
-
-        //upgrade the building
-        //FIRST, spawn the upgraded version on the same position
-        GameObject.Instantiate(UpgradedObject, transform.position, Quaternion.identity);
-
-        //Debug message on succesful upgrade
-        Debug.Log("Upgrade succesful !");
-
-        //SECOND, destroy myself if not reusable
-        if(!IsReusable)
+        //check the inventory equals the needed items and remove them from the inventory
+        if(inventory.CheckAndRemove(list.items.GetItemsSlots(NeededItems)))
         {
-            Destroy(gameObject);
+            //upgrade the building
+            //FIRST, spawn the upgraded version on the same position
+            GameObject.Instantiate(UpgradedObject, transform.position, Quaternion.identity);
+
+            //Debug message on succesful upgrade
+            Debug.Log("Upgrade succesful !");
+
+            //SECOND, destroy myself if not reusable
+            if(!IsReusable)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 }

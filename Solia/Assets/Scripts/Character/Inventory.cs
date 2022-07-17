@@ -7,8 +7,9 @@ public class Inventory : MonoBehaviour
     [Serializable]  //class that represent a slot in the inventory (tuple Item - Number)
     public class Slot
     {
-        public readonly Item SlotItem;
+        public Item SlotItem;
 
+        [SerializeField]
         private int _number;
 
         public int Number
@@ -31,7 +32,7 @@ public class Inventory : MonoBehaviour
     }
 
     [Tooltip("The list of items in this inventory")]
-    [SerializeField] public List<Slot> inventory;
+    [SerializeField] public List<Slot> inventory = new List<Slot>();
 
     // Start is called before the first frame update
     private void Start()
@@ -51,9 +52,9 @@ public class Inventory : MonoBehaviour
     {
         foreach(Slot iSlots in inventory)
         {
-            if(( i.itemName == iSlots.SlotItem.itemName ) && iSlots.Number + quantity < 99)
+            if(i.itemName == iSlots.SlotItem.itemName)
             {
-                if(( 99 - iSlots.Number ) <= quantity)
+                if(( 99 - iSlots.Number ) >= quantity)
                 {
                     iSlots.Number += quantity;
                     return;
@@ -64,12 +65,11 @@ public class Inventory : MonoBehaviour
                     iSlots.Number = 99;
                 }
             }
-            else
-            {
-                Slot toAdd = new Slot(i, quantity);
-                inventory.Add(toAdd);
-            }
         }
+
+        //if not in for each, means cannot stack, so need to make a new stack
+        Slot toAdd = new Slot(i, quantity);
+        inventory.Add(toAdd);
     }
 
     //Add one item to the inventory
