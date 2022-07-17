@@ -15,13 +15,11 @@ public class UpgradableModule : MonoBehaviour
     // Start is called before the first frame update
     private void Start()
     {
-
     }
 
     // Update is called once per frame
     private void Update()
     {
-
     }
 
     //function that tries to upgrade the current building with the materials in the inventory
@@ -37,7 +35,7 @@ public class UpgradableModule : MonoBehaviour
         Debug.Log("Upgrade succesful !");
 
         //SECOND, destroy myself if not reusable
-        if (!IsReusable)
+        if(!IsReusable)
         {
             Destroy(gameObject);
         }
