@@ -16,8 +16,10 @@ MonoBehaviour:
     Weapons:
     - itemSprite: {fileID: 21300000, guid: 15bdbf023fbda5c4f8b983e499000387, type: 3}
       itemName: BasicSword
+      effect: 
     - itemSprite: {fileID: 10913, guid: 0000000000000000f000000000000000, type: 0}
       itemName: BasicSword2
+      effect: 
     Consumables: []
     Armors: []
     Resources: []
