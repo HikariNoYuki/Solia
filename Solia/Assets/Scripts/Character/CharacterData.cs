@@ -1,18 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+using System;
 
-public class CharacterData : MonoBehaviour
+//data class for character stats
+[Serializable]
+public class CharacterData
 {
-    // Start is called before the first frame update
-    void Start()
+    public CharacterBaseStats baseStats;
+    public CharacterCurrentStats currentStats;
+
+    //base stats of the character (does not change during play)
+    [Serializable]
+    public class CharacterBaseStats
     {
-        
+        //attack increase per level
+        public int attackIncrease;
+
+        //base attack value
+        public int attackValue;
+
+        //defense increase per level
+        public int defenseIncrease;
+
+        //base defense
+        public int defenseValue;
+
+        //health increase per level
+        public int healthIncrease;
+
+        //base max health
+        public int maxHealth;
     }
 
-    // Update is called once per frame
-    void Update()
+    //current stats of the character
+    [Serializable]
+    public class CharacterCurrentStats
     {
-        
+        public int currentAttack;
+        public int currentDefense;
+        public int currentHealth;
     }
 }

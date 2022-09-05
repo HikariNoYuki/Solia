@@ -1,18 +1,12 @@
-using System.Collections;
+using System;
 using System.Collections.Generic;
+
 using UnityEngine;
 
-public class Party : MonoBehaviour
+//data class that contains a party of character
+[Serializable]
+public class Party
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Tooltip("The list of characters in the party")]
+    [SerializeField] public List<CharacterFightController> party;
 }

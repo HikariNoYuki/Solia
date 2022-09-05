@@ -1,18 +1,11 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class FightData : MonoBehaviour
+//data class about an ongoing fight
+public class FightData
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    [Tooltip("Ennemy party")]
+    public Party ennemyParty;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Tooltip("Friendly party")]
+    public Party friendlyParty;
 }
