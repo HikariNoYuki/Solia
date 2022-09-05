@@ -12,7 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d61126254a816c40bb80648d2c60ae1, type: 3}
   m_Name: AllCells
   m_EditorClassIdentifier: 
+  cellSize: 3
   CellList:
-  - cell: {fileID: 0}
-    weight: 0
-    difficulty: 0
+  - cell: {fileID: 9001506668498495154, guid: 231b722a97a6b6242a395e4fb6fdc733, type: 3}
+    weight: 2
+    difficulty: 1
+  - cell: {fileID: 7376675890014994268, guid: c86c65175f548fa40902b6e8e4bc19d5, type: 3}
+    weight: 1
+    difficulty: 3

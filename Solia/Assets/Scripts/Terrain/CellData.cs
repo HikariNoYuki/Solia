@@ -10,12 +10,22 @@ public class CellData : ScriptableObject
     [Serializable]
     public class Cell
     {
+        
+        [Tooltip("Objet cellule")]
         public GameObject cell;
+       
+        [Tooltip("Poids d'une cellule (calcul de probabillité)")]
         public int weight;
+        
+        [Tooltip("Difficulté associée à la cellule")]
         public int difficulty;
         
     }
 
+    [Tooltip("Taille d'une cellule (suppose cellule carrée)")]
+    [SerializeField] public float cellSize;
+    
+    [Tooltip("Liste de cellules utilisables")]
     [SerializeField] public List<Cell> CellList;
 
     public GameObject CellChoice(int dist)
@@ -34,10 +44,18 @@ public class CellData : ScriptableObject
         }
 
         float gene = Random.Range(0f, 1f) * CellList.Count * summedWeights; //generation calcul
+        Debug.Log("Gene value: " + gene + ", SumWeight: " + summedWeights);
 
         foreach (Cell c in CellList)
         {
-            gene -= c.weight;
+            if (dist <= c.difficulty)
+            {
+                gene -= c.weight * (dist / c.difficulty) * 10;
+            }
+            else
+            {
+                gene -= c.weight * (c.difficulty / dist) * 10;
+            }
             if (gene <= 0)
             {
                 return c.cell;
