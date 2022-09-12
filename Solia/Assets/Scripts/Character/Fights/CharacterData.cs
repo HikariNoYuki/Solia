@@ -1,5 +1,7 @@
 using System;
 
+using UnityEngine;
+
 //data class for character stats
 [Serializable]
 public class CharacterData
@@ -12,6 +14,12 @@ public class CharacterData
     {
         //minimum damage is 1
         return (int)Math.Max(attackPercent * currentStats.currentAttack, 1);
+    }
+
+    //heal this character
+    public void heal(int healing)
+    {
+        Mathf.Clamp(currentStats.currentHealth + healing, 0, currentStats.currentMaxHealth);
     }
 
     //function that returns if this character is currently alive
@@ -62,6 +70,7 @@ public class CharacterData
         public int currentAttack;
         public int currentDefense;
         public int currentHealth;
+        public int currentMaxHealth;
         public int currentSpeed;
     }
 }
