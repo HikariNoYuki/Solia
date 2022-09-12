@@ -19,4 +19,7 @@ MonoBehaviour:
   - cell: {fileID: 211791175062657167, guid: c86c65175f548fa40902b6e8e4bc19d5, type: 3}
     optimalDistance: 2
     weight: 3
+  - cell: {fileID: 2048616106166359604, guid: 0d70386867b090f468507db2a7493137, type: 3}
+    optimalDistance: 4
+    weight: 2
   cellSize: 3
