@@ -50,13 +50,7 @@ public class CharacterFightController : MonoBehaviour
         fightManager = value;
     }
 
-    //function that takes a turn (needs to be overriden)
-    protected virtual void takeTurn()
-    {
-        currentPhase = Phase.TakingTurn;
-    }
-
-    private void FixedUpdate()
+    protected virtual void FixedUpdate()
     {
         //if in a fight, load the bar
         if (fightManager != null && fightManager.currentPhase == FightManager.Phase.BetweenTurn && currentPhase == Phase.Loading)
@@ -72,6 +66,12 @@ public class CharacterFightController : MonoBehaviour
                 takeTurn();
             }
         }
+    }
+
+    //function that takes a turn (needs to be overriden)
+    protected virtual void takeTurn()
+    {
+        currentPhase = Phase.TakingTurn;
     }
 
     // Start is called before the first frame update
