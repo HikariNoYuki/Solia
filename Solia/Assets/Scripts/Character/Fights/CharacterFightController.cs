@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 
 using UnityEngine;
 
@@ -18,6 +19,9 @@ public class CharacterFightController : MonoBehaviour
     [Tooltip("Data of the character")]
     [SerializeField] protected CharacterData characterData;
 
+    [Tooltip("The basic skills list of this character")]
+    [SerializeField] private List<BasicSkill> basicSkills;
+
     //current phase of this character
     private Phase currentPhase = Phase.Loading;
 
@@ -26,6 +30,9 @@ public class CharacterFightController : MonoBehaviour
 
     //FightManager of the current fight (null if not in a fight)
     private FightManager fightManager = null;
+
+    [Tooltip("The special skills list of this character")]
+    [SerializeField] private List<SpecialSkill> specialSkills;
 
     //getter
     public CharacterData getCharacterData() => characterData;

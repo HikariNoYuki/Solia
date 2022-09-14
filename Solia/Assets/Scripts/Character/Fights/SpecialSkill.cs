@@ -1,18 +1,7 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class SpecialSkill : MonoBehaviour
+public class SpecialSkill
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    [Tooltip("The amount of mana needed to use this skill")]
+    [SerializeField] private int manaUse;
 }
