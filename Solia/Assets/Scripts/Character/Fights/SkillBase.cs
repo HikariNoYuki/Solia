@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 
 using UnityEngine;
 
+[Serializable]
 public class SkillBase
 {
     [Tooltip("The actions that will be taken by this skill in order")]
@@ -17,7 +19,7 @@ public class SkillBase
     public bool isTargetNeeded() => actions.Exists(action => action.target == Action.Target.Single);
 
     //use this skill in the current fight
-    public void useSkill(CharacterFightController caster, FightData fight, CharacterFightController target = null)
+    public virtual void useSkill(CharacterFightController caster, FightData fight, CharacterFightController target = null)
     {
         actions.ForEach(action =>
         {
