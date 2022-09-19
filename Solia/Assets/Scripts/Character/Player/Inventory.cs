@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Inventory : MonoBehaviour
 {
@@ -34,6 +35,8 @@ public class Inventory : MonoBehaviour
     [Tooltip("The list of items in this inventory")]
     [SerializeField] public List<Slot> inventory = new List<Slot>();
 
+    [Tooltip("State of the inventory: true = open; false = closed")]
+    private bool status = false;
     // Start is called before the first frame update
     private void Start()
     {
@@ -42,8 +45,26 @@ public class Inventory : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+
     }
 
+    //Open or close inventory
+    public void TryOpenCloseInventory(InputAction.CallbackContext context)
+    {
+        if (context.performed && status == false)
+        {
+            //open inventory
+            status = true;
+        }
+        else if(context.performed && status)
+        {
+            //close inventory
+            status = false;
+        }
+        
+    }
+    
+    
     //remove from the inventory the slots with 0 quantity
     private void CleanupEmpty() => inventory.RemoveAll(iSlot => iSlot.Number <= 0);
 
